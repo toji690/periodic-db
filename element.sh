@@ -29,6 +29,14 @@ then
 else
   echo "$RESULT" | while IFS="|" read ATOMIC_NUMBER NAME SYMBOL TYPE MASS MELTING BOILING
   do
-    echo "The element with atomic number $ATOMIC_NUMBER is $NAME ($SYMBOL). It's a $TYPE, with a mass of $MASS amu. $NAME has a melting point of $MELTING celsius and a boiling point of $BOILING celsius."
+    CLEAN_NUMBER=$(echo "$ATOMIC_NUMBER" | xargs)
+    CLEAN_NAME=$(echo "$NAME" | xargs)
+    CLEAN_SYMBOL=$(echo "$SYMBOL" | xargs)
+    CLEAN_TYPE=$(echo "$TYPE" | xargs)
+    CLEAN_MASS=$(echo "$MASS" | xargs)
+    CLEAN_MELTING=$(echo "$MELTING" | xargs)
+    CLEAN_BOILING=$(echo "$BOILING" | xargs)
+
+    echo -n "The element with atomic number $CLEAN_NUMBER is $CLEAN_NAME ($CLEAN_SYMBOL). It's a $CLEAN_TYPE, with a mass of $CLEAN_MASS amu. $CLEAN_NAME has a melting point of $CLEAN_MELTING celsius and a boiling point of $CLEAN_BOILING celsius."
   done
 fi
