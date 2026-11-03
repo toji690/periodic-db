@@ -37,6 +37,6 @@ else
     CLEAN_MELTING=$(echo "$MELTING" | xargs)
     CLEAN_BOILING=$(echo "$BOILING" | xargs)
 
-    echo -n "The element with atomic number $CLEAN_NUMBER is $CLEAN_NAME ($CLEAN_SYMBOL). It's a $CLEAN_TYPE, with a mass of $CLEAN_MASS amu. $CLEAN_NAME has a melting point of $CLEAN_MELTING celsius and a boiling point of $CLEAN_BOILING celsius."
+    echo "The element with atomic number $CLEAN_NUMBER is $CLEAN_NAME ($CLEAN_SYMBOL). It's a $CLEAN_TYPE, with a mass of $CLEAN_MASS amu. $CLEAN_NAME has a melting point of $CLEAN_MELTING celsius and a boiling point of $CLEAN_BOILING celsius."
   done
 fi
